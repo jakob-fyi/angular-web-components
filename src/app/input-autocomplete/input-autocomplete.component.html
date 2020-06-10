@@ -1,0 +1,10 @@
+<div class="form-group">
+  <label for="land">Land</label>
+  <input id="land" #land type="text" [(ngModel)]="inputValue" (keyup)="inputChanged()" (focus)="focusIn()" (focusout)="focusOut()" class="form-control" placeholder="Option">
+  <div class="options" [hidden]="hideOptions">
+    <p [hidden]="options.length > 0">{{message}}</p>
+    <ul>
+        <li *ngFor="let option of options" (click)="insertOption(option)">{{ option.name }}</li>
+    </ul>
+  </div>
+</div>
